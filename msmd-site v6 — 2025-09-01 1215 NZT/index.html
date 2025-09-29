@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moko See Moko Do — He Tomokanga</title>
+
+  <link rel="icon" href="/favicon.png" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="canonical" href="https://mokoseemokodo.com/" />
+
+  <meta name="theme-color" content="#0b0b0d" />
+  <meta name="description" content="Moko See Moko Do — carving, code and wā. He Tomokanga (gateway) and Uruoa Star protocols for moving projects from kōrero to mahi." />
+
+  <meta property="og:title" content="Moko See Moko Do — He Tomokanga" />
+  <meta property="og:description" content="Carving, code and wā. A working gateway (tomokanga) with Uruoa Star protocols that move us from kōrero to mahi." />
+  <meta property="og:url" content="https://mokoseemokodo.com/" />
+  <meta property="og:image" content="https://mokoseemokodo.com/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#121216;
+      --ink:#e8e8ef;
+      --muted:#a6a6b3;
+      --line:#1f1f26;
+      --brand:#b7a772;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Arial, sans-serif;
+      color:var(--ink);
+      background: radial-gradient(1200px 800px at 50% -10%, #111117 0%, var(--bg) 60%);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:#fff;text-decoration:none}
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter:saturate(130%) blur(6px);
+      background:color-mix(in oklab, #101014 70%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .bar{
+      max-width:1080px; margin:0 auto; padding:12px 20px;
+      display:flex; align-items:center; gap:16px; justify-content:space-between;
+    }
+    .brand{display:flex; align-items:center; gap:10px; letter-spacing:.02em}
+    .brand svg{width:22px; height:22px; opacity:.9; filter:drop-shadow(0 0 6px rgba(183,167,114,.15))}
+    .brand b{font-weight:700}
+    nav a{color:var(--muted); margin-left:16px; font-weight:600}
+    nav a:hover{color:var(--ink)}
+
+    main{max-width:1080px; margin:24px auto 96px; padding:0 20px}
+    .section{background:linear-gradient(180deg, rgba(18,18,22,.65), rgba(18,18,22,.35)); border:1px solid var(--line); border-radius:16px;}
+
+    /* Tomokanga / Uruoa Star */
+    .gate{ padding:24px }
+    .gate h1{ margin:0 0 6px 0; font-size:clamp(28px, 3vw, 42px); letter-spacing:.01em; line-height:1.2 }
+    .kicker{color:var(--brand); font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:12px}
+    .lede{color:var(--muted); margin:8px 0 16px 0}
+    .rules{display:grid; gap:10px; margin-top:8px}
+    .rule{display:flex; align-items:flex-start; gap:10px}
+    .dot{width:8px;height:8px;border-radius:99px;background:var(--brand);margin-top:.6rem;box-shadow:0 0 0 6px rgba(183,167,114,.12)}
+
+    /* Pare panel */
+    .pare-wrap{ margin-top:22px; padding:20px }
+    .pare{
+      background:#0e0e13; border:1px solid var(--line); border-radius:14px; padding:18px;
+      display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+    }
+    .pare svg{width:min(740px, 95%); height:auto; display:block; opacity:.95}
+    .pare .glow{ position:absolute; inset:auto; width:120%; height:70%; background: radial-gradient(60% 60% at 50% 40%, rgba(111,227,255,.12), transparent 60%); filter:blur(24px); transform:translateY(-10%); pointer-events:none; }
+    .draw path{ stroke-dasharray:800; stroke-dashoffset:800; animation:dash 2.8s ease-out forwards }
+    @keyframes dash{ to{ stroke-dashoffset:0 } }
+
+    /* About section */
+    .about{ padding:26px 24px 28px; margin-top:22px}
+    .about h2{margin:0 0 12px 0; font-size:clamp(22px, 2.6vw, 30px)}
+    .about p{margin:.7rem 0; color:#d6d6df}
+    .about strong{color:#fff}
+
+    /* Gallery */
+    .gallery{ margin-top:26px; padding:22px}
+    .gallery h3{margin:0 0 14px 0; font-size:18px; color:var(--muted); text-transform:uppercase; letter-spacing:.18em}
+    .grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:10px}
+    .card{position:relative; overflow:hidden; border-radius:12px; border:1px solid var(--line); background:#0b0b10}
+    .card img{width:100%; height:100%; display:block; object-fit:cover; transition:transform .25s ease}
+    .card:hover img{ transform:scale(1.04) }
+    .cap{ position:absolute; left:8px; bottom:8px; background:rgba(0,0,0,.45); color:#eaeaf2; padding:3px 7px; border-radius:6px; font-size:12px }
+
+    @media (max-width:720px){ .grid{ grid-template-columns: repeat(2, 1fr) } }
+    @media (max-width:480px){ .grid{ grid-template-columns: 1fr } }
+
+    footer{max-width:1080px; margin:28px auto 80px; padding:0 20px; color:var(--muted); font-size:13px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#b7a772" stroke-width="1.5" aria-hidden="true">
+          <path d="M5 7c4-4 10-4 14 0M3 12c6-6 12-6 18 0M5 17c4 4 10 4 14 0" />
+        </svg>
+        <b>Moko See Moko Do</b>
+      </div>
+      <nav>
+        <a href="#hero">Hero</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1) TOMOKANGA -->
+    <section id="hero" class="section gate">
+      <div class="kicker">Uruoa Star</div>
+      <h1>He Tomokanga — a working gateway</h1>
+      <p class="lede">Uruoa is a start signal. We cross the threshold from kōrero to mahi with a light set of protocols that keep the wairua right, the crew safe, and the work moving.</p>
+      <div class="rules">
+        <div class="rule"><span class="dot"></span><div><strong>Start small, start now.</strong> One clear step in the next 24 hours beats a perfect plan next month.</div></div>
+        <div class="rule"><span class="dot"></span><div><strong>Bring care.</strong> Safety, mana and consent are part of every brief, not an afterthought.</div></div>
+        <div class="rule"><span class="dot"></span><div><strong>Share the mahi.</strong> Roles are visible. Progress is visible. Credit is visible.</div></div>
+        <div class="rule"><span class="dot"></span><div><strong>Reflect, then repeat.</strong> Close loops quickly; learn, adjust and go again.</div></div>
+      </div>
+    </section>
+
+    <!-- 2) PARE ANIMATION (now sits between Tomokanga and About) -->
+    <section class="section pare-wrap" aria-labelledby="pare-label">
+      <h2 id="pare-label" class="sr-only" style="position:absolute;left:-9999px">Pare</h2>
+      <div class="pare">
+        <div class="glow" aria-hidden="true"></div>
+        <svg class="draw" viewBox="0 0 800 540" fill="none" stroke="#d6d6df" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Pare carving outline">
+          <path d="M120 240c100-160 460-160 560 0M140 280c90-120 420-120 520 0M180 340c70-70 360-70 440 0" opacity=".45"/>
+          <path d="M195 210c25-25 60-40 105-45m300 45c-25-25-60-40-105-45" opacity=".8"/>
+          <path d="M260 300c40 30 240 30 280 0" opacity=".8"/>
+          <path d="M250 380c80 40 220 40 300 0" opacity=".55"/>
+          <path d="M400 150c6-8 24-8 30 0m-15 0v80" opacity=".9"/>
+          <path d="M320 220c-18 10-28 28-28 46s10 32 28 42m160-88c18 10 28 28 28 46s-10 32-28 42" opacity=".9"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 3) ABOUT -->
+    <section class="section about">
+      <h2>About Moko See Moko Do</h2>
+      <p><strong>Moko See Moko Do (MSMD)</strong> is a practice that treats technology and toi like the same tool set: both carve space, both carry story, and both can steward people through change. We work at the meeting point of <em>carving, code and wā</em> — the attention and time we give to each other and the kaupapa. Our tools may be chisels, cameras and keyboards, but the thing we keep returning to is tikanga: moving with respect, clarity and care so that people remain whole inside the work.</p>
+      <p>MSMD began as a discipline for getting things done in a way that still felt human. We wanted a way to move from kōrero to mahi without losing the mauri that was present in the first conversation. The answer became a set of very small, very practical protocols we call the <strong>Uruoa Star</strong>. The “star” part matters because it’s a navigation device: five simple points we can always see, no matter where we stand. Start small and start now. Bring care to the room. Make roles and progress visible. Close loops quickly, then repeat. And leave the door open so others can join and contribute.</p>
+      <p>This approach lets MSMD support a surprising spread of work. Some days we’re shaping a pare, lighting a set, or cutting a sequence; other days we’re committing code, turning up a server, or sketching a data model. The through line is the same: carry forward the purpose, keep people safe, and ship real progress in small, frequent moves. That rhythm is how momentum is built. It’s also how trust is built, because people can see and feel the increments.</p>
+      <p>We use that same rhythm in the way we share knowledge. Wherever possible, the artefacts are public: a working demo, a changelog, an open brief, an accessible repository. We specifically prefer documents that other people can fork and run — not just watch — because participation is the fastest way to learn. “See → do” isn’t just a slogan; it’s a structure. The moment something is visible and runnable, more people can carry it, critique it and improve it.</p>
+      <p>MSMD is not a brand looking for clients; it’s a capability looking for collaborators. We value small crews that can self-steer, where rangatiratanga is expressed through service — making it easier for others to do their best work. That means we keep our stack light, pick tools that are accessible, and remove unnecessary gates. It also means we make room for reflection: after a sprint or a show, we ask what we learned and what we’ll do differently in the next round. Those notes become the next navigation marks.</p>
+      <p>If you’re reading this and thinking, “I could carry a piece of that,” you probably can. Maybe it’s a camera, a sketch, a line of code, a line in the budget, or a line in the sand that says, “we do this with care.” That’s MSMD. It’s not a promise of perfect work; it’s a promise of <em>present</em> work — visible, steady and generous. <strong>Haere mai.</strong></p>
+    </section>
+
+    <!-- 4) GALLERY -->
+    <section id="gallery" class="section gallery">
+      <h3>Gallery</h3>
+      <div class="grid">
+        <figure class="card"><img src="/images/niwa-smoke-1200.webp" width="600" height="800" alt="Niwa workshop"><figcaption class="cap">Niwa Workshop</figcaption></figure>
+        <figure class="card"><img src="/images/detail-1200.webp" width="600" height="800" alt="Detail"><figcaption class="cap">Detail</figcaption></figure>
+        <figure class="card"><img src="/images/crouching-bull-1200.webp" width="600" height="800" alt="Crouching Bull"><figcaption class="cap">Crouching Bull</figcaption></figure>
+        <figure class="card"><img src="/images/Pou-Rama-1200.webp" width="600" height="800" alt="Pou Rāma"><figcaption class="cap">Pou Rāma</figcaption></figure>
+        <figure class="card"><img src="/images/sas-1200.webp" width="600" height="800" alt="SAS"><figcaption class="cap">SAS</figcaption></figure>
+        <figure class="card"><img src="/images/selfcarver-smoke-1200.jpg" width="600" height="800" alt="Self-carver in smoke"><figcaption class="cap">Self-carver</figcaption></figure>
+        <figure class="card"><img src="/images/whiro-full-1200.webp" width="600" height="800" alt="Whiro full"><figcaption class="cap">Whiro</figcaption></figure>
+        <figure class="card"><img src="/images/Manu-Mahunga-1200.webp" width="600" height="800" alt="Manu Mahunga"><figcaption class="cap">Manu Mahunga</figcaption></figure>
+        <figure class="card"><img src="/images/og.jpg" width="600" height="800" alt="Studio lights"><figcaption class="cap">O.G.</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Moko See Moko Do — carving, code and wā.
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

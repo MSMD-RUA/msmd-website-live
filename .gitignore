@@ -1,0 +1,18 @@
+﻿node_modules/
+dist/
+.build/
+.cache/
+*.log
+
+# Blender backups/autosave
+*.blend1
+*.blend2
+*.blend@
+*.blend??
+
+# Python cache
+__pycache__/
+
+# OS clutter
+.DS_Store
+Thumbs.db
